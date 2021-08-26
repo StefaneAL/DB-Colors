@@ -1,0 +1,45 @@
+const mongoose = require('mongoose')
+
+const userSchema = new mongoose.Schema({
+    _id: mongoose.Type.Object,
+    nome: {
+        type: String,
+        required: true
+    },
+    cpf:{
+        type: String,
+        required: true
+    },
+    local: {
+        type: String,
+        required: true    
+    },
+    empresa:{
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'empresa'  
+    },
+    hardSkills:{
+        type: mongoose.Schema.Types.ObjectId,
+        required: true,
+        ref: 'hardSkill'
+    },
+    email:{
+        type: String,
+        required: true
+    },
+    senha: {
+        type: String,
+        required: true    
+    },
+    criadoEm: {
+        type: Date,
+        required: true,
+        default: new Date
+    }
+},{
+    versionKey: false
+})
+
+
+module.exports = mongoose.model('user', userSchema)
