@@ -9,14 +9,11 @@ db.connect()
 //usa aws rotas 
 app.use(express.json())
 
-const empresasRouter = require('./src/routes/empresas.routes')
-app.use('/empresa', empresasRouter)
+const empresasRouter = require('./src/routes/users.routes')
+app.use('/user', empresasRouter)
 
 const hardSkillsRouter = require('./src/routes/hardSkills.routes')
 app.use('/skills', hardSkillsRouter)
-
-const vagasRouter = require('./src/routes/vagas.routes')
-app.use('./vagas', vagasRouter)
 
 //definir endPoints de cada rute
 

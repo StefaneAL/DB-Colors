@@ -14,11 +14,6 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true    
     },
-    empresa:{
-        type: mongoose.Schema.Types.ObjectId,
-        required: true,
-        ref: 'empresa'  
-    },
     hardSkills:{
         type: mongoose.Schema.Types.ObjectId,
         required: true,
