@@ -1,4 +1,6 @@
 const express = require("express")
+const cors = require("cors")
+
 const app = express();
 require('dotenv-safe').config()
 const PORT = process.env.PORT || 8585
@@ -6,6 +8,7 @@ const PORT = process.env.PORT || 8585
 const db = require('./src/data/database')
 db.connect()
 
+app.use(cors())
 //usa aws rotas 
 app.use(express.json())
 
