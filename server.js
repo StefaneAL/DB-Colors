@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express();
 require('dotenv-safe').config()
-const PORT = 8585 || process.env.PORT
+const PORT = process.env.PORT || 8585
 //conectar ao db
 const db = require('./src/data/database')
 db.connect()
