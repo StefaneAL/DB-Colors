@@ -24,9 +24,9 @@ const createUser = async (req,res) =>{
         senha: req.body.senha,
         criadoEm:req.body.criadoEm
     })
-    const UserExist = await User.findOne({cnpj: req.body.cnpj})
+    const UserExist = await User.findOne({cpf: req.body.cpf})
     if(UserExist){
-        return res.status(409).json({err: 'Empreja já cadastrada'})
+        return res.status(409).json({err: 'Pessoa já cadastrada, tente entrar com seu email 😎'})
     }
 
     try{
