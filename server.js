@@ -1,17 +1,19 @@
 const express = require("express")
-const app = express();
+
 require('dotenv-safe').config()
 const PORT = process.env.PORT || 8585
-//conectar ao db
 const db = require('./src/data/database')
-db.connect()
+const app = express();
 const cors = require("cors")
+db.connect()
+
 app.use(cors())
+
 //usa aws rotas 
 app.use(express.json())
 
-const empresasRouter = require('./src/routes/users.routes')
-app.use('/user', empresasRouter)
+const userRouter = require('./src/routes/users.routes')
+app.use('/user', userRouter)
 
 const hardSkillsRouter = require('./src/routes/hardSkills.routes')
 app.use('/skills', hardSkillsRouter)
