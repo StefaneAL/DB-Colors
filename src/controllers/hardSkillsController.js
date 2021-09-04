@@ -16,9 +16,9 @@ const getId = async (req,res)=>{
     HardSkill.findOne({id:req.params.id},
         function(err){
             if(err){
-                res.status(500).json({message: err.message})
+                res.status(500).send({message: err.message})
             }else{
-                res.status(200).json(skillById)
+                res.status(200).send(skillById)
             }
         })
 }

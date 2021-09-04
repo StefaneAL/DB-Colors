@@ -11,3 +11,4 @@ const connect = () => {mongoose.connect(
     .catch(err => console.err)
 }
 module.exports = { connect }
+
