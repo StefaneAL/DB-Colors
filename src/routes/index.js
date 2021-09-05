@@ -4,7 +4,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
     res.status(200).send({
         "Message": "Bem vinde ao Banco de Talentos do Todas as Cores",
-        "Objetivo": "Aqui voce encontra proficionais LGBTQIA+ ara que sua empresa possa ter realmente diversidade com TODAS AS CORES"
+        "Objetivo": "Aqui voce encontra profissionais LGBTQIA+ ara que sua empresa possa ter realmente diversidade com TODAS AS CORES"
     })
 })
 
