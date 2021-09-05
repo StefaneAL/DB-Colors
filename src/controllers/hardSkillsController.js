@@ -43,6 +43,22 @@ const createSkill = async(req, res) =>{
         res.status(400).json({message: err.message})
     }
 }
+const deleteSkill = async (req,res)=>{
+    const skill = await HardSkill.findById(req.params.id)
+    if(skill == null){
+        return res.status(404).json({message: "Skill não encontrada"})
+    }
+    skill.deletOne(
+        {id: req.params.id},
+        function(err){
+            if(err){
+                res.status(500).json({message: err.message})
+            }else{
+                res.status(200).json({message: "Skill deletada com sucesso"})
+            }
+        }
+    )
+}
 
 // const updateInfo = async(req, res) =>{
 //     try{
@@ -57,6 +73,7 @@ const createSkill = async(req, res) =>{
 module.exports ={
     getAll,
     getId,
+    deleteSkill,
     createSkill
     //updateInfo
 }
