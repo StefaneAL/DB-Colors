@@ -13,6 +13,6 @@ router.post("/create", controller.createSkill)
 
 router.delete('/:id', controller.deleteSkill)
 
-//router.patch('/:id', controller.updateInfo)
+router.patch('/:id', controller.updateInfo)
 
 module.exports = router

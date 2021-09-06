@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const HardSkill = require('../models/hardSkill')
 const bcryt = require('bcrypt')
 const jwt =  require('jsonwebtoken')
+const { json } = require('express')
 const SECRET = process.env.SECRET
 
 //ok
@@ -43,13 +44,16 @@ const createSkill = async(req, res) =>{
         res.status(400).json({message: err.message})
     }
 }
+
+//ok
 const deleteSkill = async (req,res)=>{
-    const skill = await HardSkill.findById(req.params.id)
+    const skillId = req.params.id
+    const skill = await HardSkill.findById(skillId)
     if(skill == null){
         return res.status(404).json({message: "Skill não encontrada"})
     }
     skill.deleteOne(
-        {id: req.params.id},
+        {id: skillId},
         function(err){
             if(err){
                 res.status(500).json({message: err.message})
@@ -60,7 +64,30 @@ const deleteSkill = async (req,res)=>{
     )
 }
 
-// const updateInfo = async(req, res) =>{
+ const updateInfo = async(req, res) =>{
+    const skillId = req.params.id
+    skill.findOne({id:skillId},function(err, skillFound){
+        if(err){
+            res.status(500).json({message: err.message})
+        }else{
+            if(skillFound){
+                skill.updadeOne(
+                    {id: skillId},
+                    {$set: req.body},
+                    function(err){
+                        if(err){
+                            res.status(500).json({message: err.message})
+                        }else{
+                            res.status(200).json({message: "Campo alterado com sucesso ✔"})
+                        }
+                    }
+                )
+            }else{
+                res.status(404).json({message:"Skill não encontrado para ser atualizado"})
+            }
+        }
+    })
+
 //     try{
 //         const skill = await HardSkill.findById(req.params.id)
 //         if (skill == null){
@@ -68,12 +95,12 @@ const deleteSkill = async (req,res)=>{
 //         }
 //         if()
 //     }
-// }
+ }
 
 module.exports ={
     getAll,
     getId,
     deleteSkill,
-    createSkill
-    //updateInfo
+    createSkill,
+    updateInfo
 }
