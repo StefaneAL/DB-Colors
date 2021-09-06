@@ -67,14 +67,23 @@ const updateInfo = async(req, res) =>{
     const skillId = req.params.id
     HardSkill.findOne({id:skillId},function(err, skillFound){
         if(err){
-            res.status(500).json({message: err.message})
+            res.status(500).json({
+                message: err.message
+            })
         }else{
             if(skillFound){
-                skill.updadeOne({id: skillId},{$set: req.body},function(err){
+                HardSkill.updadeOne(
+                    {id: skillId},
+                    {$set: req.body},
+                    function(err){
                         if(err){
-                            res.status(500).json({message: err.message})
+                            res.status(500).json({
+                                message: err.message
+                            })
                         }else{
-                            res.status(200).json({message: "Campo alterado com sucesso ✔"})
+                            res.status(200).json({
+                                message: "Campo alterado com sucesso ✔"
+                            })
                         }
                     }
                 )
