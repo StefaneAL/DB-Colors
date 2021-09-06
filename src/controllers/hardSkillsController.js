@@ -64,7 +64,7 @@ const deleteSkill = async (req,res)=>{
     )
 }
 
- const updateInfo = async(req, res) =>{
+const updateInfo = async(req, res) =>{
     const skillId = req.params.id
     skill.findOne({id:skillId},function(err, skillFound){
         if(err){
@@ -87,14 +87,6 @@ const deleteSkill = async (req,res)=>{
             }
         }
     })
-
-//     try{
-//         const skill = await HardSkill.findById(req.params.id)
-//         if (skill == null){
-//             return res.status(404).json({message: "Skill não encontrada. Cheque o id 😉"})
-//         }
-//         if()
-//     }
  }
 
 module.exports ={
