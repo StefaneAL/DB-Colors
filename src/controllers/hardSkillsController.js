@@ -2,7 +2,6 @@ const mongoose = require('mongoose')
 const HardSkill = require('../models/hardSkill')
 const bcryt = require('bcrypt')
 const jwt =  require('jsonwebtoken')
-const { json } = require('express')
 const SECRET = process.env.SECRET
 
 //ok
@@ -66,15 +65,12 @@ const deleteSkill = async (req,res)=>{
 
 const updateInfo = async(req, res) =>{
     const skillId = req.params.id
-    skill.findOne({id:skillId},function(err, skillFound){
+    HardSkill.findOne({id:skillId},function(err, skillFound){
         if(err){
             res.status(500).json({message: err.message})
         }else{
             if(skillFound){
-                skill.updadeOne(
-                    {id: skillId},
-                    {$set: req.body},
-                    function(err){
+                skill.updadeOne({id: skillId},{$set: req.body},function(err){
                         if(err){
                             res.status(500).json({message: err.message})
                         }else{
