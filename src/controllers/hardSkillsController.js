@@ -48,7 +48,7 @@ const deleteSkill = async (req,res)=>{
     if(skill == null){
         return res.status(404).json({message: "Skill não encontrada"})
     }
-    skill.deletOne(
+    skill.deleteOne(
         {id: req.params.id},
         function(err){
             if(err){
