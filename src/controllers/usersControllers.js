@@ -6,14 +6,14 @@ const SECRET = process.env.SECRET
 
 //não popula 
 const getAll = async(req,res) => {
-    const user = await User.find().populate("hardSkill")
+    const user = await User.find()
     res.status(200).json(user)
 }
 
 //falta avisar que não encontrou id
 const getId = async (req,res)=>{
     const userId = req.params.id
-    const userById = await User.findById(userId)
+    const userById = await User.findById(userId).populate("hardSkill")
     User.findOne(
         {id: userId},
         function(err){
