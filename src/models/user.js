@@ -14,11 +14,11 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true    
     },
-    hardSkills:{
+    hardSkills:[{
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'hardSkill'
-    },
+    }],
     email:{
         type: String,
         required: true
