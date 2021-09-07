@@ -79,67 +79,10 @@ const deleteSkill = async (req,res)=>{
             return res.status(404).send("Registro não encontrado");
         } else { return res.status(200).send(vetnext) }
     });
-    // const skillById = await Skill.findById(skillId)// obj ref ao id
-    // console.log(skillId)
-    // Skill.findOne({id: skillId}, function(err,skillFound){
-    //     if(err){
-    //         res.status(500).send({
-    //             message: err.message
-    //         })
-    //     }else{
-    //         if(skillFound){
-    //             Skill.updateOne(
-    //                 {id: skillId},
-    //                 {$set: req.body},
-    //                 function(err){
-    //                     if(err){
-    //                         res.status(500).send({
-    //                             message: err.message
-    //                         })  
-    //                     }else{
-    //                         res.status(200).send({
-    //                             message: "Campo alterado com sucesso"
-    //                         })
-    //                     }
-    //                 })
-    //         }else{
-    //             res.status(404).send({
-    //                 message: "Skill não encontrado para ser atualizado"
-    //             })
-    //         }
-    //     }
-    // })
+   
 }
 
-// const updateInfo = async(req, res) =>{
-//     const skillId = req.params.id
-//     Skill.findOne({id:skillId},function(err, skillFound){
-//         if(err){
-//             res.status(500).json({
-//                 message: err.message
-//             })
-//         }else{
-//             if(skillFound){
-//                 Skill.updadeOne(
-//                     {id: skillId},
-//                     {$set: req.body},
-//                     function(err){
-//                         if(err){
-//                             res.status(500).json({
-//                                 message: err.message
-//                             })
-//                         }else{
-//                             res.status(200).json({
-//                                 message: "Campo alterado com sucesso ✔"
-//                             })
-//                         }
-//                     })
-//             }else{
-//                 res.status(404).json({message:"Skill não encontrado para ser atualizado"})
-//             }
-//         }
-//     })
-//  }
+
 
 module.exports ={
     getAll,
