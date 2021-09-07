@@ -9,6 +9,21 @@ const getAll = async(req,res) => {
     const user = await User.find().populate("hardSkill")
     res.status(200).json(user)
 }
+
+const getId = async (req,res)=>{
+    const userId = req.params.id
+    const userById = await User.findById(userId)
+    User.findOne(
+        {id: userId},
+        function(err){
+            if(err){
+                res.status(500).json({message: err.message})
+            }else{
+                res.status(200).json(userById)
+            }
+        })
+}
+
 //OK
 const createUser = async (req,res) =>{
     const senhaHash = bcryt.hashSync(req.body.senha,10)
@@ -37,7 +52,60 @@ const createUser = async (req,res) =>{
     }
 }
 
+const deletUser = async(req, res)=>{
+    const userId = req.params.id
+    const user = await User.findById(userId)
+    if(user == null){
+        return res.status(404).json({message: "User não encontrade"})
+    }
+    user.deleteOne(
+        {id:userId},
+        function(err){
+            if(err){
+                res.status(500).json({message: err.message})
+            }else{
+                res.status(200).json({message: "User deletade com sucesso"})
+            }
+        }
+    )
+}
+
+const updateInfo = (req, res) => {
+    const userId = req.params.id
+    User.findOne({id: userId}, function(err,userFound){
+        if(err){
+            res.status(500).send({
+                message: err.message
+            })
+        }else{
+            if(userFound){
+                User.updateOne(
+                    {id: userId},
+                    {$set: req.body},
+                    function(err){
+                        if(err){
+                            res.status(500).send({
+                                message: err.message
+                            })  
+                        }else{
+                            res.status(200).send({
+                                message: "Campo alterado com sucesso"
+                            })
+                        }
+                    })
+            }else{
+                res.status(404).send({
+                    message: "User não encontrado para ser atualizado"
+                })
+            }
+        }
+    })
+}
+
 module.exports = {
     getAll,
-    createUser
+    getId,
+    createUser,
+    deletUser,
+    updateInfo
 }
