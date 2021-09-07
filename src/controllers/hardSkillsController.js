@@ -68,7 +68,7 @@ const deleteSkill = async (req,res)=>{
     const updateInfo = (req, res) => {
     const skillId = req.params.id
     console.log(skillId)
-    Skill.findOne({id: skillId}, function(err,skillFound){
+    Skill.findById({id: skillId}, function(err,skillFound){
         if(err){
             res.status(500).send({
                 message: err.message
