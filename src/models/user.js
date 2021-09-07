@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
     hardSkills:[{
         type: mongoose.Schema.Types.ObjectId,
         required: true,
-        ref: 'hardSkill'
+        ref: "hardSkill"
     }],
     email:{
         type: String,
@@ -36,5 +36,5 @@ const userSchema = new mongoose.Schema({
     versionKey: false
 })
 
-
-module.exports = mongoose.model('user', userSchema)
+const user =  mongoose.model('user', userSchema)
+module.exports = user
