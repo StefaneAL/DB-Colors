@@ -10,7 +10,7 @@ const getAll = async(req, res) =>{
     res.status(200).json(skills)
 }
 
-//ok
+//ok fazer comparação
 const getId = async (req,res)=>{
     const skillId = req.params.id
     const skillById = await Skill.findById(skillId)
@@ -66,36 +66,49 @@ const deleteSkill = async (req,res)=>{
 
 // não reconhece id cai na rota de não esncontrada
     const updateInfo = (req, res) => {
-    const skillId = req.params.id
-    console.log(skillId)
-    Skill.findById({id: skillId}, function(err,skillFound){
-        if(err){
-            res.status(500).send({
-                message: err.message
-            })
-        }else{
-            if(skillFound){
-                Skill.updateOne(
-                    {id: skillId},
-                    {$set: req.body},
-                    function(err){
-                        if(err){
-                            res.status(500).send({
-                                message: err.message
-                            })  
-                        }else{
-                            res.status(200).send({
-                                message: "Campo alterado com sucesso"
-                            })
-                        }
-                    })
-            }else{
-                res.status(404).send({
-                    message: "Skill não encontrado para ser atualizado"
-                })
-            }
-        }
-    })
+    const skillId = req.params.id // encontra id
+
+    const vetNextFromBody = req.body;
+
+    Skill.findByIdAndUpdate(skillId, vetNextFromBody, { new: true }, (err, vetnext) => {
+        if (err) {
+            return res.status(424).send(
+                { message: err.message });
+        } else if (!vetnext) {
+
+            return res.status(404).send("Registro não encontrado");
+        } else { return res.status(200).send(vetnext) }
+    });
+    // const skillById = await Skill.findById(skillId)// obj ref ao id
+    // console.log(skillId)
+    // Skill.findOne({id: skillId}, function(err,skillFound){
+    //     if(err){
+    //         res.status(500).send({
+    //             message: err.message
+    //         })
+    //     }else{
+    //         if(skillFound){
+    //             Skill.updateOne(
+    //                 {id: skillId},
+    //                 {$set: req.body},
+    //                 function(err){
+    //                     if(err){
+    //                         res.status(500).send({
+    //                             message: err.message
+    //                         })  
+    //                     }else{
+    //                         res.status(200).send({
+    //                             message: "Campo alterado com sucesso"
+    //                         })
+    //                     }
+    //                 })
+    //         }else{
+    //             res.status(404).send({
+    //                 message: "Skill não encontrado para ser atualizado"
+    //             })
+    //         }
+    //     }
+    // })
 }
 
 // const updateInfo = async(req, res) =>{
