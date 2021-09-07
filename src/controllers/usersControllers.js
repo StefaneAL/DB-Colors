@@ -8,6 +8,7 @@ const SECRET = process.env.SECRET
 const getAll = async(req,res) => {
     const user = await User.find()
     res.status(200).json(user)
+    console.log(User)
 }
 
 //falta avisar que não encontrou id
