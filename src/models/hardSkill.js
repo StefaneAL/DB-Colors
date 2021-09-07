@@ -14,7 +14,11 @@ const hardSkillSchema = new mongoose.Schema({
         type: Date,
         require: true,
         default: new Date
-    }
+    },
+    users:[{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user"
+    }]
 },{
     versionKey: false
 })
