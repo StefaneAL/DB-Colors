@@ -4,12 +4,13 @@ const bcryt = require('bcrypt')
 const jwt =  require('jsonwebtoken')
 const SECRET = process.env.SECRET
 
-//OK
+//não popula 
 const getAll = async(req,res) => {
     const user = await User.find().populate("hardSkill")
     res.status(200).json(user)
 }
 
+//falta avisar que não encontrou id
 const getId = async (req,res)=>{
     const userId = req.params.id
     const userById = await User.findById(userId)
@@ -24,7 +25,7 @@ const getId = async (req,res)=>{
         })
 }
 
-//OK
+// não consigo add mais de uma skill
 const createUser = async (req,res) =>{
     const senhaHash = bcryt.hashSync(req.body.senha,10)
     req.body.senha = senhaHash
@@ -52,6 +53,7 @@ const createUser = async (req,res) =>{
     }
 }
 
+//ok
 const deletUser = async(req, res)=>{
     const userId = req.params.id
     const user = await User.findById(userId)
@@ -70,6 +72,7 @@ const deletUser = async(req, res)=>{
     )
 }
 
+// não encontro o id 
 const updateInfo = (req, res) => {
     const userId = req.params.id
     User.findOne({id: userId}, function(err,userFound){

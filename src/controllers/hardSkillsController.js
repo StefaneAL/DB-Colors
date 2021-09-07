@@ -64,6 +64,7 @@ const deleteSkill = async (req,res)=>{
     )
 }
 
+// não reconhece id cai na rota de não esncontrada
 const updateInfo = (req, res) => {
     const skillId = req.params.id
     Skill.findOne({id: skillId}, function(err,skillFound){
