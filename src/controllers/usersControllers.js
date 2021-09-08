@@ -11,7 +11,7 @@ const getAll = async(req,res) => {
     console.log(User)
 }
 
-//falta avisar que não encontrou id / para teste 
+//Ok
 const getId = async (req,res)=>{
     const userId = req.params.id
     const userById = await User.findById(userId)
@@ -76,10 +76,14 @@ const deletUser = async(req, res)=>{
     )
 }
 
-// não encontro o id / para teste 
+// colocar parametro para user não encontrado / para test 
 const updateInfo = (req, res) => {
     const userId = req.params.id
     const infoReq = req.body
+    const userById = await User.findById(userId)
+    if(userById == null){
+        return res.status(404).json({message: "User não encontrado 🤷‍♀️"})
+    }
     User.findOneAndUpdate(userId, infoReq, {new: true}, (err, userUpdate)=> {
         if(err){
             return res.status(500).json({message: err.message})
@@ -89,35 +93,6 @@ const updateInfo = (req, res) => {
             return res.status(200).json(userUpdate)
         }
     })
-
-    // User.findOne({id: userId}, function(err,userFound){
-    //     if(err){
-    //         res.status(500).send({
-    //             message: err.message
-    //         })
-    //     }else{
-    //         if(userFound){
-    //             User.updateOne(
-    //                 {id: userId},
-    //                 {$set: req.body},
-    //                 function(err){
-    //                     if(err){
-    //                         res.status(500).send({
-    //                             message: err.message
-    //                         })  
-    //                     }else{
-    //                         res.status(200).send({
-    //                             message: "Campo alterado com sucesso"
-    //                         })
-    //                     }
-    //                 })
-    //         }else{
-    //             res.status(404).send({
-    //                 message: "User não encontrado para ser atualizado"
-    //             })
-    //         }
-    //     }
-    // })
 }
 
 module.exports = {

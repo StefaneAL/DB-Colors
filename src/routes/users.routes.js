@@ -10,6 +10,6 @@ router.post('/create', controller.createUser)
 
 router.delete('/:id', controller.deletUser)
 
-router.put('/update/:id', controller.updateInfo)
+router.put('/:id', controller.updateInfo)
 
 module.exports = router
