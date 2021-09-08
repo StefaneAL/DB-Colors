@@ -10,10 +10,13 @@ const getAll = async(req, res) =>{
     res.status(200).json(skills)
 }
 
-//ok fazer comparação
+//fazer comparação / para teste
 const getId = async (req,res)=>{
     const skillId = req.params.id
     const skillById = await Skill.findById(skillId)
+    if(userId == null){
+        return res.status(404).json({message: "User não encontrado 🤷‍♀️"})
+    }
     Skill.findOne({id:skillId},
         function(err){
             if(err){
@@ -22,6 +25,7 @@ const getId = async (req,res)=>{
                 res.status(200).send(skillById)
             }
         })
+
 }
 
 //ok
@@ -64,20 +68,19 @@ const deleteSkill = async (req,res)=>{
     )
 }
 
-// não reconhece id cai na rota de não esncontrada
-    const updateInfo = (req, res) => {
+// não reconhece id cai na rota de não esncontrada / para teste 
+const updateInfo = (req, res) => {
     const skillId = req.params.id // encontra id
+    const infoReq = req.body;
 
-    const vetNextFromBody = req.body;
-
-    Skill.findByIdAndUpdate(skillId, vetNextFromBody, { new: true }, (err, vetnext) => {
+    Skill.findByIdAndUpdate(skillId, infoReq, { new: true }, (err, skillUpdate) => {
         if (err) {
             return res.status(424).send(
                 { message: err.message });
-        } else if (!vetnext) {
+        } else if (!skillUpdate) {
 
             return res.status(404).send("Registro não encontrado");
-        } else { return res.status(200).send(vetnext) }
+        } else { return res.status(200).send(skillUpdate) }
     });
    
 }
