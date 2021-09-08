@@ -15,7 +15,7 @@ const getAll = async(req,res) => {
 const getId = async (req,res)=>{
     const userId = req.params.id
     const userById = await User.findById(userId)
-    if(userId == null){
+    if(userById == null){
         return res.status(404).json({message: "User não encontrado 🤷‍♀️"})
     }
     User.findOne(

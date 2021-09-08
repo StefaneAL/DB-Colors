@@ -14,7 +14,7 @@ const getAll = async(req, res) =>{
 const getId = async (req,res)=>{
     const skillId = req.params.id
     const skillById = await Skill.findById(skillId)
-    if(userId == null){
+    if(skillById == null){
         return res.status(404).json({message: "User não encontrado 🤷‍♀️"})
     }
     Skill.findOne({id:skillId},
