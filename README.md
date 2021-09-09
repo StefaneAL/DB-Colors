@@ -19,7 +19,7 @@ Hoje se tormou o maior meetup LGBTI+ da América Latina.
     * Inserem pessoas LGBTI+ no mercado de trabalho com a divulgação de vagas e a presença cortesia em eventos importantes para a área.
 
 * ### **Crescer**
-    * Gerams liderança LGBTI+ com treinamentos e mentorias para palestrantes.
+    * Geram lideranças LGBTI+ com treinamentos e mentorias para palestrantes.
 
     ![name](https://raw.githubusercontent.com/StefaneAL/DB-Colors/main/igm/dados.jpeg)
 
