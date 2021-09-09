@@ -47,7 +47,7 @@ Uma API com dados basicos de `USER` e tambem de `HardSkills` que pode ser increm
 
 ## **Features e rotas**
 
->Esta API está sendo escutada em `https://db-colors.herokuapp.com` 
+>Esta API está sendo executada em `https://db-colors.herokuapp.com` 
 ---
 * ## `USER`
 
