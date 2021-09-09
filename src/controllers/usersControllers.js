@@ -76,7 +76,7 @@ const deletUser = async(req, res)=>{
     )
 }
 
-// colocar parametro para user não encontrado / para test 
+//ok
 const updateInfo = async (req, res) => {
     const userId = req.params.id
     const infoReq = req.body
