@@ -24,6 +24,15 @@ Hoje se tormou o maior meetup LGBTI+ da América Latina.
     ![name](https://raw.githubusercontent.com/StefaneAL/DB-Colors/main/igm/dados.jpeg)
 
 
+## **Contextualização** 
+Ao tentar fazer meu cadastro notei que o projeto usa um `Google Forms` para armazenar as informações de talentos cadastrados.
+
+entendi que poderia ser uma boa colaboração criar uma API para o armazenamento e a busca de profissionais 
+
+## **Solução** 
+Uma API com dados basicos de `USER` e tambem de `HardSkills` que pode ser incrementada conforme a necessidade da plataforma.
+
+## **Funcionalidades** 
 
 
 
