@@ -15,7 +15,7 @@ Todas as letra é um projeto que começou em 2018 motivado pela falta de iniciat
     * Capacitam pessoas LGBTI+ com encontros, cursos e treinamentos de tecnologia. Além de oferecer entradas gratuitas em grandes eventos.
 
 * ### **Inserir**
-    * Inserem pessoas LGBTI+ no mercado de trabalho com a divulgação de vagas e a presença cortesia em eventos importantes para a área.
+    * Inserem pessoas LGBTI+ no mercado de trabalho com a divulgando de vagas e a presença cortesia em eventos importantes para a área.
 
 * ### **Crescer**
     * Geram lideranças LGBTI+ com treinamentos e mentorias para palestrantes.
