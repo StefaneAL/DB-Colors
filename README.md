@@ -7,8 +7,7 @@
 > Status: **Concluído** ✔
 
 ## **Apresentação** 
-Todas as letra é um projeto que se iniciou em 2018 motivado pela falta de iniciativas para pessoas **LGBTI+**. Tinha como objetivo inicial ser um grupo de apoio para compartilhar vivências. 
-Hoje se tormou o maior meetup LGBTI+ da América Latina.
+Todas as letra é um projeto que começou em 2018 motivado pela falta de iniciativas para pessoas **LGBTI+**. Tinha como objetivo inicial ser um grupo de apoio para compartilhar vivências mas tornou-se o maior meetup LGBTI+ da América Latina.
 
 ## *Tem como base 3 pilares* 
 
