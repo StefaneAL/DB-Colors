@@ -65,8 +65,8 @@ Uma API com dados basicos de `USER` e tambem de `HardSkills` que pode ser increm
 
 | Feature | Método | Rota |
 |---------|--------|------|
-| Cadastro de `HardSkills`| POST | `/user/create` |
-| Lista de todos os `HardSkills`| GET | `/user/all` |
-| Localizar `HardSkills` por `id` | GET | `/user/:id` |
-| Atualização de `HardSkills` | PUT | `/user/:id` |
-| Remoção de `HardSkills` | DEL | `/user/:id` |
+| Cadastro de `HardSkills`| POST | `/skill/create` |
+| Lista de todos os `HardSkills`| GET | `/skill/all` |
+| Localizar `HardSkills` por `id` | GET | `/skill/:id` |
+| Atualização de `HardSkills` | PUT | `/skill/:id` |
+| Remoção de `HardSkills` | DEL | `/skill/:id` |
