@@ -33,12 +33,40 @@ Entendi que poderia ser uma boa colaboração criar uma API para o armazenamento
 Uma API com dados basicos de `USER` e tambem de `HardSkills` que pode ser incrementada conforme a necessidade da plataforma.
 
 ## **Funcionalidades** 
-
-
-
+- [X] Cadastro de `USER`
+- [X] Lista de todos os `USERS`
+- [X] Localizar `USERS` por `id`
+- [X] Atualização de cadastro 
+- [X] Remoção de `USERS`
+---
+- [X] Cadastro de `HardSkills`
+- [X] Lista de todas as `HardSkills`
+- [X] Localizar `HardSkills` por `id`
+- [X] Atualização de `HardSkills` 
+- [X] Remoção de `HardSkills`
 
 ## **Features e rotas**
 
->Esta API está sendo escutada em `https://db-colors.herokuapp.com/` 
+>Esta API está sendo escutada em `https://db-colors.herokuapp.com` 
+---
+* ## `USER`
 
-### 
+| Feature | Método | Rota |
+|---------|--------|------|
+| Cadastro de `USER`| POST | `/user/create` |
+| Lista de todos os `USERS`| GET | `/user/all` |
+| Localizar `USERS` por `id` | GET | `/user/:id` |
+| Atualização de cadastro | PUT | `/user/:id` |
+| Remoção de `USERS` | DEL | `/user/:id` |
+
+---
+
+* ## `HardSkills`
+
+| Feature | Método | Rota |
+|---------|--------|------|
+| Cadastro de `HardSkills`| POST | `/user/create` |
+| Lista de todos os `HardSkills`| GET | `/user/all` |
+| Localizar `HardSkills` por `id` | GET | `/user/:id` |
+| Atualização de `HardSkills` | PUT | `/user/:id` |
+| Remoção de `HardSkills` | DEL | `/user/:id` |
