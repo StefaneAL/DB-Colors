@@ -69,7 +69,7 @@ const deleteSkill = async (req,res)=>{
 }
 
 //colocar parametro para user não encontrado / para test 
-const updateInfo = (req, res) => {
+const updateInfo = async (req, res) => {
     const skillId = req.params.id 
     const infoReq = req.body;
     const skillById = await Skill.findById(skillId)

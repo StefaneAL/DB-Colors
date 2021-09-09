@@ -77,7 +77,7 @@ const deletUser = async(req, res)=>{
 }
 
 // colocar parametro para user não encontrado / para test 
-const updateInfo = (req, res) => {
+const updateInfo = async (req, res) => {
     const userId = req.params.id
     const infoReq = req.body
     const userById = await User.findById(userId)
