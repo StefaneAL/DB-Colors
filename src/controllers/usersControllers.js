@@ -62,7 +62,7 @@ const deletUser = async(req, res)=>{
     const userId = req.params.id
     const user = await User.findById(userId)
     if(user == null){
-        return res.status(404).json({message: "User não encontrade"})
+        return res.status(404).json({message: "User não encontrade 🤷‍♀️"})
     }
     user.deleteOne(
         {id:userId},
@@ -70,7 +70,7 @@ const deletUser = async(req, res)=>{
             if(err){
                 res.status(500).json({message: err.message})
             }else{
-                res.status(200).json({message: "User deletade com sucesso"})
+                res.status(200).json({message: "User deletade com sucesso ✔"})
             }
         }
     )

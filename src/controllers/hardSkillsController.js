@@ -15,7 +15,7 @@ const getId = async (req,res)=>{
     const skillId = req.params.id
     const skillById = await Skill.findById(skillId)
     if(skillById == null){
-        return res.status(404).json({message: "User não encontrado 🤷‍♀️"})
+        return res.status(404).json({message: "Skill não encontrado 🤷‍♀️"})
     }
     Skill.findOne({id:skillId},
         function(err){
@@ -54,7 +54,7 @@ const deleteSkill = async (req,res)=>{
     const skillId = req.params.id
     const skill = await Skill.findById(skillId)
     if(skill == null){
-        return res.status(404).json({message: "Skill não encontrada"})
+        return res.status(404).json({message: "Skill não encontrada 🤷‍♀️"})
     }
     skill.deleteOne(
         {id: skillId},
@@ -62,7 +62,7 @@ const deleteSkill = async (req,res)=>{
             if(err){
                 res.status(500).json({message: err.message})
             }else{
-                res.status(200).json({message: "Skill deletada com sucesso"})
+                res.status(200).json({message: "Skill deletada com sucesso ✔"})
             }
         }
     )
@@ -74,7 +74,7 @@ const updateInfo = async (req, res) => {
     const infoReq = req.body;
     const skillById = await Skill.findById(skillId)
     if(skillById == null){
-        return res.status(404).json({message: "User não encontrado 🤷‍♀️"})
+        return res.status(404).json({message: "Skill não encontrado 🤷‍♀️"})
     }
     Skill.findByIdAndUpdate(skillId, infoReq, { new: true }, (err, skillUpdate) => {
         if (err) {
