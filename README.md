@@ -7,12 +7,12 @@
 > Status: **Concluído** ✔
 
 ## **Apresentação** 
-Todas as letra é um projeto que começou em 2018 motivado pela falta de iniciativas para pessoas **LGBTI+**. Tinha como objetivo inicial ser um grupo de apoio para compartilhar vivências mas tornou-se o maior meetup LGBTI+ da América Latina.
+Todas as letra é um projeto que começou em 2018 motivado pela falta de iniciativas para pessoas **LGBTI+**. Tinha como objetivo inicial ser um grupo de apoio para compartilhar vivências, mas tornou-se o maior meetup LGBTI+ da América Latina.
 
 ## *Tem como base 3 pilares* 
 
 * ### **Capacitar** 
-    * Capacitam pessoas LGBTI+ com encontros, cursos e treinamentos de tecnologia. Além de oferecer entradas gratuitas em grandes eventos.
+    * Capacitam pessoas LGBTI+ com encontros, cursos e treinamentos em tecnologia. Além de oferecer entradas gratuitas em grandes eventos.
 
 * ### **Inserir**
     * Inserem pessoas LGBTI+ no mercado de trabalho com a divulgando de vagas e a presença cortesia em eventos importantes para a área.
@@ -29,7 +29,7 @@ Ao tentar fazer meu cadastro notei que o projeto usa um `Google Forms` para arma
 Entendi que poderia ser uma boa colaboração criar uma API para o armazenamento e a busca de profissionais 
 
 ## **Solução** 
-Uma API com dados basicos de `USER` e tambem de `HardSkills` que pode ser incrementada conforme a necessidade da plataforma.
+Uma API com dados básicos de `USER` e também de `HardSkills` que pode ser incrementada conforme a necessidade da plataforma.
 
 ## **Funcionalidades** 
 - [X] Cadastro de `USER`
